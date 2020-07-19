@@ -16,6 +16,10 @@ require_relative '../app/models/character.rb'
 require_relative '../app/models/show.rb'
 require_relative '../app/models/movie.rb'
 
+require_relative '../app/models/location.rb'
+require_relative '../app/models/trainer.rb'
+require_relative '../app/models/client.rb'
+require_relative '../app/models/session.rb'
 def reload
   load 'config/environment.rb'
 end
@@ -131,32 +135,52 @@ end
 # charlie.total_distance
 # Passenger.premium_members 
 
-tom_cruise = Actor.new("Tom Cruise")
-tom_hardy = Actor.new("Tom Hardy")
-timothee_chalamet = Actor.new("Timothee Chalamet")
+# tom_cruise = Actor.new("Tom Cruise")
+# tom_hardy = Actor.new("Tom Hardy")
+# timothee_chalamet = Actor.new("Timothee Chalamet")
 
-malcolm = Character.new("Malcolm", timothee_chalamet)
-king_duncan = Character.new("King Duncan", tom_hardy)
-king_john = Character.new("King John", timothee_chalamet)
-ethan_hunt = Character.new("Ethan Hunt", tom_cruise)
+# malcolm = Character.new("Malcolm", timothee_chalamet)
+# king_duncan = Character.new("King Duncan", tom_hardy)
+# king_john = Character.new("King John", timothee_chalamet)
+# ethan_hunt = Character.new("Ethan Hunt", tom_cruise)
 
 
-macbeth_movie = Movie.new("Macbeth")
-king_john_movie = Movie.new("The King")
+# macbeth_movie = Movie.new("Macbeth")
+# king_john_movie = Movie.new("The King")
 
-macbeth_show = Show.new("Macbeth")
+# macbeth_show = Show.new("Macbeth")
 
-malcolm_appearance_movie = Appearance.new(malcolm, macbeth_movie)
-malcolm_appearance_show = Appearance.new(malcolm, macbeth_show)
-king_duncan_appearance_movie = Appearance.new(king_duncan, macbeth_movie)
+# malcolm_appearance_movie = Appearance.new(malcolm, macbeth_movie)
+# malcolm_appearance_show = Appearance.new(malcolm, macbeth_show)
+# king_duncan_appearance_movie = Appearance.new(king_duncan, macbeth_movie)
 
-Actor.most_characters
-malcolm.appearances
-Character.most_appearances
-macbeth_show.on_the_big_screen 
-macbeth_movie.appearances
-macbeth_movie.actors
-Movie.most_actors
+# Actor.most_characters
+# malcolm.appearances
+# Character.most_appearances
+# macbeth_show.on_the_big_screen 
+# macbeth_movie.appearances
+# macbeth_movie.actors
+# Movie.most_actors
 
+larchmont = Location.new("Larchmont Gym")
+new_rochelle = Location.new("New Rochelle Gym")
+
+leonard = Trainer.new("Leonard")
+jim = Trainer.new("Jim")
+
+ryan = Client.new("Ryan", leonard)
+rob = Client.new("Rob", leonard)
+michelle = Client.new("Michelle", jim)
+
+ryan_larchmont = Session.new(ryan, larchmont)
+rob_larchmont = Session.new(rob, larchmont)
+ryan_new_rochelle = Session.new(ryan, new_rochelle)
+
+leonard.sessions
+ryan.trainer 
+leonard.clients
+Trainer.most_clients
+ryan.assign_trainer(jim)
+Location.least_clients 
 
 Pry.start
