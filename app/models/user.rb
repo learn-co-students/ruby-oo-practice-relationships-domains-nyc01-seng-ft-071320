@@ -21,12 +21,16 @@ class User
         highest_pledge.user 
     end 
 
+    def my_projects
+        Pledge.all.map {|pledge| pledge.project if pledge.user == self}.compact.uniq 
+    end
+
     def self.multi_pledger
-        Pledge.all.select{|pledge| pledge.user}
+        self.all.select {|user| user if user.my_projects.length > 1}
     end
 
     def self.project_creator
-        Pledge.all.map{|pledge| pledge.user}.uniq
+        Project.all.map{|project| project.user}.uniq
     end 
 end
 
