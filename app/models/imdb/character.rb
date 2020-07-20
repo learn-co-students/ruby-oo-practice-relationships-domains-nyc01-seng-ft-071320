@@ -12,7 +12,7 @@ class Character
   end
 
   def movies
-    Movie.all.select { |movie| movie.character == self }
+    
   end
   
 end

@@ -1,4 +1,14 @@
 class Movie
+  @@all = []
+
+  def initialize
+    Movie.all << self
+  end
+  
+  def self.all
+    @@all
+  end
+
   def characters
     Character.all.select { |character| character.movies == self }
   end
