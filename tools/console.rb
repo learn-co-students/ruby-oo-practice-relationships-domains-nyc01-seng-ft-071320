@@ -25,6 +25,14 @@ trip4 = Trip.new(la_apt, chelsea)
 trip5 = Trip.new(la_apt, alyssa)
 trip6 = Trip.new(la_apt, david)
 
+flour = Ingredient.new("Flour", 10.5)
+chocolate = Ingredient.new("Chocolate", 21.2)
+butter = Ingredient.new("Butter", 15.8)
+
+cupcake = Dessert.new("Cupcake", [flour, chocolate, butter])
+
+
+
 
 Pry.start
 
