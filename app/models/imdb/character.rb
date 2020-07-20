@@ -10,4 +10,8 @@ class Character
   def self.all
     @@all
   end
+
+  def movies
+  end
+  
 end
