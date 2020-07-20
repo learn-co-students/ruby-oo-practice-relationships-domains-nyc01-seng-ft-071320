@@ -35,7 +35,7 @@ class Project
   def backers
     pledges.map(&:user)
   end
-p
+
   def backer_count
     backers.count
   end
