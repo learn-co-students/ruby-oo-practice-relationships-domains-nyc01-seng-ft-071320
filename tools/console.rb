@@ -27,10 +27,19 @@ trip6 = Trip.new(la_apt, david)
 
 flour = Ingredient.new("Flour", 10.5)
 chocolate = Ingredient.new("Chocolate", 21.2)
-butter = Ingredient.new("Butter", 15.8)
+butter = Ingredient.new("Butter", 15.0)
+egg = Ingredient.new("Egg", 10.2)
+chocolate_sprinkles = Ingredient.new("Chocolate Sprinkles", 15.3)
+milk = Ingredient.new("Milk", 53.0)
+sugar = Ingredient.new("Sugar", 31.4)
+
 
 cupcake = Dessert.new("Cupcake", [flour, chocolate, butter])
+pancake = Dessert.new("Pancake", [flour, egg, butter])
+cookie = Dessert.new("Cookie", [flour, butter, chocolate_sprinkles, sugar ])
 
+davids = Bakery.new("Davids", [cupcake, pancake])
+roys = Bakery.new("Roys", [cookie, cupcake])
 
 
 

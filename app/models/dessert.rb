@@ -1,7 +1,7 @@
 class Dessert
     @@all = []
+    attr_accessor :name, :ingredients, :calories
 
-    attr_accessor :name, :ingredients
     def initialize(name, ingredients)
         @name = name
         @ingredients = ingredients
@@ -12,7 +12,6 @@ class Dessert
         @@all
     end
 
-    def 
 
     def ingredients
         @ingredients
