@@ -1,6 +1,6 @@
 class Movie
   def characters
-    Character.all.select do |character| character.movies == self }
+    Character.all.select { |character| character.movies == self }
   end
 
   def actors
