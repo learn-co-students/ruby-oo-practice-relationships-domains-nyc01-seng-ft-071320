@@ -1,7 +1,8 @@
 class Movie
   @@all = []
 
-  def initialize
+  def initialize(name)
+    @name = name
     Movie.all << self
   end
   
