@@ -26,5 +26,7 @@ class Character
       Show.all.include?(casting.content)
     end
   end
-  
+
+  def self.most_appearances
+  end
 end

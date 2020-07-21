@@ -27,7 +27,7 @@ show2 = Show.new("Week")
 show3 = Show.new("Month")
 show4 = Show.new("Minute")
 show5 = Show.new("Second")
-show6 = Show.new("Hour")
+show6 = Show.new("Time")
 
 Casting.new(movie1, character1)
 Casting.new(movie2, character1)
