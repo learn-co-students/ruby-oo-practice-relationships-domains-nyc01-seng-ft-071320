@@ -18,7 +18,13 @@ class Character
   def movies
     castings.select do |casting|
       Movie.all.include?(casting.content)
-    end.uniq
+    end
+  end
+
+  def shows
+    casting.select do |casting|
+      Show.all.include?(casting.content)
+    end
   end
   
 end
