@@ -11,8 +11,14 @@ class Character
     @@all
   end
 
+  def castings
+    Casting.all.select { |casting| casting.character == self }
+  end
+  
   def movies
-    
+    castings.select do |casting|
+      Movie.all.include?(casting.content)
+    end.uniq
   end
   
 end
