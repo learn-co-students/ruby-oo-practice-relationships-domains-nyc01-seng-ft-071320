@@ -17,6 +17,14 @@ class Movie
     castings.map(&:character)
   end
 
+  def actors
+    characters.map(&:actor).uniq
+  end
+
+  def actor_count
+    actors.count
+  end
+  
   def self.most_actors
     all.group_by { |movie| movie.actor_count }.max.last
   end

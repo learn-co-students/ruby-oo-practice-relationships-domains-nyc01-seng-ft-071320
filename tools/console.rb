@@ -32,6 +32,7 @@ show6 = Show.new
 Casting.new(movie1, character1)
 Casting.new(movie2, character1)
 Casting.new(movie2, character2)
+Casting.new(movie2, character3)
 Casting.new(show1, character1)
 Casting.new(show2, character1)
 Casting.new(show2, character2)
