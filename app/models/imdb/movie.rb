@@ -9,16 +9,12 @@ class Movie
     @@all
   end
 
+  def castings
+    Casting.all.select { |casting| casting.content == self }
+  end
+
   def characters
-    Character.all.select { |character| character.movies == self }
-  end
-
-  def actors
-    characters.map(&:actor)
-  end
-
-  def actor_count
-    actors.count
+    castings.map(&:character)
   end
 
   def self.most_actors
